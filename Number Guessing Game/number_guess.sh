@@ -21,7 +21,7 @@ echo $NUMBER
 echo "Guess the secret number between 1 and 1000:"
 read GUESS
 
-GUESS_FUNC () {
+FUNC_GUESS_NUMBER () {
   while [[ $GUESS =~ ^[0-9]+$ ]]
   do
     if [[ $GUESS > $NUMBER ]]
@@ -44,7 +44,7 @@ GUESS_FUNC () {
   done
 }
 
-GUESS_FUNC
+FUNC_GUESS_NUMBER
 
 while [[ ! $GUESS =~ ^[0-9]+$ ]]
 do
@@ -52,6 +52,6 @@ do
   read GUESS
   if [[ $GUESS =~ ^[0-9]+$ && ! $GUESS == $NUMBER ]]
   then
-    GUESS_FUNC
+    FUNC_GUESS_NUMBER
   fi
 done
